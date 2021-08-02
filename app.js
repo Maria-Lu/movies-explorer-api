@@ -14,11 +14,13 @@ const { DB_URI, PORT } = require('./utils/config');
 
 const app = express();
 
-app.use(cors({
-  origin: true,
-  exposedHeaders: '*',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: true,
+    exposedHeaders: '*',
+    credentials: true,
+  }),
+);
 
 mongoose.connect(DB_URI, {
   useNewUrlParser: true,
